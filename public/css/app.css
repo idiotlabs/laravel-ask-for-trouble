@@ -10644,3 +10644,14 @@ a.text-dark:focus {
   }
 }
 
+.VideoBg__content {
+  text-align: center;
+  background-color: rgba(52, 72, 92, 0.7);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 4em;
+  color: #ebebeb;
+}
+
