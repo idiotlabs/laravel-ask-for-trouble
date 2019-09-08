@@ -27,5 +27,6 @@
         "tailwindcss": "^1.1.2",
         "vue-grid-layout": "^2.3.4",
         "vue-videobg": "^2.0.0"
-    }
+    },
+    "postinstall": "npm run production"
 }
