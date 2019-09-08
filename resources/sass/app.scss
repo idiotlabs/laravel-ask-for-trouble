@@ -1,8 +1,58 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
+
+// tailwind
+@import "~tailwindcss/dist/base";
+@import "~tailwindcss/dist/components";
+@import "~tailwindcss/dist/utilities";
+
+// VideoBg
+.VideoBg {
+  img, video {
+    max-width: initial;
+    height: inherit;
+  }
+  .VideoBg__content {
+    text-align: center;
+    background-color: rgba(52, 72, 92, 0.7);
+  }
+}
+
+// VueGridLayout
+.vue-grid-layout {
+  img, video {
+    max-width: initial;
+    height: inherit;
+  }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 4em;
+  color: #ebebeb;
+}
+h2 {
+  font-weight: 300;
+  font-size: 3em;
+  color: #ebebeb;
+}
+
+.social-box {
+  .xi {
+    padding: 10px 20px 0 0;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor:pointer;
+  }
+
+  .xi:hover {
+    opacity: 0.7;
+  }
+}
