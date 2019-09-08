@@ -26,11 +26,11 @@
         name: "LandingGridComponent",
         data() {
             return {
-                gridColNum: 20,
+                gridColNum: 30,
                 gridRowNum: 30,
-                gridImageMinSize: 2,
+                gridImageMinSize: 3,
                 gridImageMaxSize: 5,
-                gridImageCount: 20,
+                gridImageCount: 10,
                 layout: [
                 ]
             }
@@ -38,8 +38,8 @@
         mounted() {
             for (let i = 0; i <= this.gridImageCount; i++) {
                 this.layout.push({
-                    "x": this.getRandomX(),
-                    "y": this.getRandomY(),
+                    "x": this.getRandomX(i),
+                    "y": this.getRandomY(i),
                     "w": this.getRandomWidth(),
                     "h": this.getRandomHeight(),
                     "i": i
@@ -47,11 +47,13 @@
             }
         },
         methods: {
-            getRandomX() {
-                return Math.floor(Math.random() * this.gridColNum)
+            getRandomX(index) {
+                let min = (index % 3) * 10;
+                let max = min + (this.gridRowNum / 3);
+                return Math.floor(Math.random() * max - min + 1) + min
             },
-            getRandomY() {
-                return Math.floor(Math.random() * this.gridColNum)
+            getRandomY(index) {
+                return Math.floor(Math.random() * this.gridRowNum - (index * 2) + 1) + (index * 2);
             },
             getRandomWidth() {
                 return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 1) + this.gridImageMinSize);
