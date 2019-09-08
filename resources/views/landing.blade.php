@@ -21,13 +21,17 @@
 </head>
 <body>
 <div id="app">
-    <main class="">
+    <section>
         <video-bg :sources="['{{ asset('assets/video/timelapse.mp4') }}']" img="{{ asset('assets/images/bg.jpg') }}">
             <h1>Video Background</h1>
         </video-bg>
+    </section>
 
-        <landing-component></landing-component>
-    </main>
+    <section>
+        <landing-grid-component></landing-grid-component>
+    </section>
+
+    <section></section>
 </div>
 </body>
 </html>

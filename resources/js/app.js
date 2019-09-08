@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.VideoBg = require('vue-videobg');
+window.VueGridLayout = require('vue-grid-layout');
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,9 +22,12 @@ window.VideoBg = require('vue-videobg');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('video-bg', VideoBg.default);
+Vue.component('grid-layout', VueGridLayout.GridLayout.default);
+Vue.component('grid-item', VueGridLayout.GridItem.default);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('landing-component', require('./components/LandingComponent').default);
+Vue.component('landing-grid-component', require('./components/LandingGridComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
