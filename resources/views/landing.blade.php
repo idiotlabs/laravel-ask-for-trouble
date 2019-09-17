@@ -10,11 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     @if (app()->environment('local'))
-        <link href="{{ mix('css/admin/app.css') }}" rel="stylesheet">
-        <script src="{{ mix('js/admin/app.js') }}"></script>
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <script src="{{ mix('js/app.js') }}"></script>
     @else
-        <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/admin/app.js') }}" defer></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}" defer></script>
     @endif
 
     <!-- Fonts -->
