@@ -9,11 +9,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
     @if (app()->environment('local'))
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ mix('js/app.js') }}" defer></script>
     @else
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
     @endif
 
@@ -21,45 +20,52 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
 
+    <!-- Styles -->
+    @if (app()->environment('local'))
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @else
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif
+
     <!-- Add icon library -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 <body>
 <div id="app">
-    <div>
-        <section>
-            <video-bg :sources="['{{ asset('assets/video/timelapse.mp4') }}']" img="{{ asset('assets/images/bg.jpg') }}">
-                <h2 class="pt-64">누구나 즐기는</h2>
-                <h1>자유로운 음악 생활</h1>
-                <button class="mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
-                    사서고생 하러 가기
-                </button>
-            </video-bg>
-        </section>
+    <section>
+        <video-bg :sources="['{{ asset('assets/video/timelapse.mp4') }}']" img="{{ asset('assets/images/bg.jpg') }}">
+            <h2 class="pt-64">누구나 즐기는</h2>
+            <h1>자유로운 음악 생활</h1>
+            <button class="mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
+                사서고생 하러 가기
+            </button>
+        </video-bg>
+    </section>
 
-        <section class="mt-10">
-            <div class="flex flex-wrap -mx-3 overflow-hidden">
-                <div class="my-3 px-3 w-1/3 overflow-hidden text-center">
+    <section>
+        <div class="container mx-auto pt-16">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/3 px-2 mb-6 text-center">
                     <i class="xi-emoticon-cool-o xi-3x"></i>
-                    <div class="mt-3">최대 10명이서 한 팀으로</div>
+                    <div class="mt-4">최대 10명이서 한 팀으로</div>
                 </div>
 
-                <div class="my-3 px-3 w-1/3 overflow-hidden text-center">
+                <div class="w-full md:w-1/3 px-2 mb-6 text-center">
                     <i class="xi-music xi-3x"></i>
-                    <div class="mt-3">커버곡 연주, 자작곡, 영상등 자유롭게</div>
+                    <div class="mt-4">커버곡 연주, 자작곡, 영상등 자유롭게</div>
                 </div>
 
-                <div class="my-3 px-3 w-1/3 overflow-hidden text-center">
+                <div class="w-full md:w-1/3 px-2 mb-6 text-center">
                     <i class="xi-equalizer-thin xi-3x"></i>
-                    <div class="mt-3">음악을 즐겨보세요</div>
+                    <div class="mt-4">음악을 즐겨보세요</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="mt-10">
-            <landing-grid-component></landing-grid-component>
-        </section>
-    </div>
+    <section>
+        <landing-grid-component class="pt-10"></landing-grid-component>
+    </section>
 
     <footer class='bg-gray-900 w-full border-t border-grey mt-10 p-4 text-white'>
         <div class="mt-4 font-thin">음악을 좋아하는 분들의 연락을 기다립니다.</div>
