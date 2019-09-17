@@ -9,15 +9,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @if (app()->environment('local'))
+        <link href="{{ mix('css/admin/app.css') }}" rel="stylesheet">
+        <script src="{{ mix('js/admin/app.js') }}"></script>
+    @else
+        <link href="{{ asset('css/admin/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/admin/app.js') }}" defer></script>
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Add icon library -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">

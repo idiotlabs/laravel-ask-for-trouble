@@ -7,6 +7,7 @@ environments:
     production:
         memory: 1024
         cli-memory: 512
+        domain: musictrouble.club
         build:
             - 'composer install --no-dev --classmap-authoritative'
             - 'php artisan event:cache'
