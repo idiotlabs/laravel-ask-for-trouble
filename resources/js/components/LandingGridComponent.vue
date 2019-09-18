@@ -4,11 +4,12 @@
             :col-num="gridColNum"
             :row-height="gridRowNum"
             :is-draggable="true"
-            :is-resizable="false"
+            :is-resizable="true"
             :is-mirrored="false"
             :vertical-compact="true"
             :margin="[10, 10]"
-            :use-css-transforms="true">
+            :use-css-transforms="true"
+            :responsive="true">
         <grid-item v-for="item in layout"
                    :x="item.x"
                    :y="item.y"
@@ -26,11 +27,11 @@
         name: "LandingGridComponent",
         data() {
             return {
-                gridColNum: 30,
+                gridColNum: 12,
                 gridRowNum: 30,
-                gridImageMinSize: 3,
-                gridImageMaxSize: 5,
-                gridImageCount: 10,
+                gridImageMinSize: 2,
+                gridImageMaxSize: 3,
+                gridImageCount: 6,
                 layout: [
                 ]
             }
@@ -48,12 +49,10 @@
         },
         methods: {
             getRandomX(index) {
-                let min = (index % 3) * 10;
-                let max = min + (this.gridRowNum / 3);
-                return Math.floor(Math.random() * max - min + 1) + min
+                return Math.floor(Math.random() * this.gridColNum + 1);
             },
             getRandomY(index) {
-                return Math.floor(Math.random() * this.gridRowNum - (index * 2) + 1) + (index * 2);
+                return Math.floor(Math.random() * this.gridRowNum + 1);
             },
             getRandomWidth() {
                 return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 1) + this.gridImageMinSize);

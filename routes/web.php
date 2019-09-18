@@ -20,3 +20,4 @@
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'LandingController@index');
+Route::get('/contact', 'LandingController@contact');
