@@ -49,10 +49,10 @@
         },
         methods: {
             getRandomX(index) {
-                return Math.floor(Math.random() * this.gridColNum + 1);
+                return Math.floor(Math.random() * (this.gridColNum / 2));
             },
             getRandomY(index) {
-                return Math.floor(Math.random() * this.gridRowNum + 1);
+                return Math.floor(Math.random() * (this.gridRowNum / 2));
             },
             getRandomWidth() {
                 return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 1) + this.gridImageMinSize);
