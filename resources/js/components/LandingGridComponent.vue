@@ -49,7 +49,7 @@
         },
         methods: {
             getRandomX(index) {
-                return Math.floor(Math.random() * (this.gridColNum / 2));
+                return Math.floor(Math.random() * this.gridColNum);
             },
             getRandomY(index) {
                 return Math.floor(Math.random() * (this.gridRowNum / 2));
