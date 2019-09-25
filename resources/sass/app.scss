@@ -43,6 +43,14 @@ h2 {
   color: #ebebeb;
 }
 
+// Grid layout image
+.grid-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/bg.jpg');
+  background-size: 100% 100%;
+}
+
 .social-box {
   .xi {
     padding: 10px 20px 0 0;

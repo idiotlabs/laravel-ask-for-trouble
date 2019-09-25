@@ -17,7 +17,7 @@
                    :h="item.h"
                    :i="item.i"
                    :key="item.i">
-            <img :src="image" width="100%" height="100%"/>
+            <div class="grid-image"></div>
         </grid-item>
     </grid-layout>
 </template>

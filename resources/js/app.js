@@ -25,6 +25,7 @@ Vue.component('video-bg', VideoBg.default);
 Vue.component('grid-layout', VueGridLayout.GridLayout.default);
 Vue.component('grid-item', VueGridLayout.GridItem.default);
 
+Vue.component('lib-video-background', require('./components/lib/VideoBackgroiund').default);
 Vue.component('landing-grid-component', require('./components/LandingGridComponent').default);
 
 /**
