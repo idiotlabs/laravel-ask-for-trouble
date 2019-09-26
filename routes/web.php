@@ -21,3 +21,5 @@
 
 Route::get('/', 'LandingController@index');
 Route::get('/contact', 'LandingController@contact');
+
+Route::get('/sitemap.xml', 'SitemapController@index');
