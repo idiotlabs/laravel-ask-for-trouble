@@ -17,7 +17,7 @@
                    :h="item.h"
                    :i="item.i"
                    :key="item.i">
-            <img src="/assets/images/bg.jpg" width="100%" height="100%"/>
+            <div class="grid-image"></div>
         </grid-item>
     </grid-layout>
 </template>
@@ -33,7 +33,8 @@
                 gridImageMaxSize: 3,
                 gridImageCount: 6,
                 layout: [
-                ]
+                ],
+                image: "/assets/images/bg.jpg",
             }
         },
         mounted() {
