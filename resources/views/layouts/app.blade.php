@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="누구나 즐기는 자유로운 음악 생활 - 수유리콜라보 사서고생">
-    <meta name="keywords" content="음악, 음악생활, 도봉구, 강북구, 기타, 베이스, 건반, 키보드, 드럼, 사서고생">
+    <meta name="keywords" content="수유리콜라보, 사서고생, 음악, 음악생활, 도봉구, 강북구, 기타, 베이스, 건반, 키보드, 드럼">
     <meta name="description" content="자유롭게 모여서 음악을 할 수 있는 곳입니다. 누구든지 음악을 즐기는 마음만 있다면 환영합니다.">
     <meta name="robots" content="index,follow">
     <meta property="og:type" content="website">
