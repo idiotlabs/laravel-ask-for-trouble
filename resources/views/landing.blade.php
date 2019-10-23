@@ -2,7 +2,7 @@
 
 @section('content')
     <section>
-        <lib-video-background :sources="['{{ asset('assets/video/timelapse.mp4') }}']" img="{{ asset('assets/images/bg.jpg') }}">
+        <lib-video-background :sources="['{{ asset('assets/video/main-trouble.mp4') }}']" img="{{ asset('assets/images/main-trouble.jpeg') }}">
             <h2 class="pt-48 sm:pt-64">누구나 즐기는</h2>
             <h1 class="text-5xl sm:text-6xl">자유로운 음악 생활</h1>
             <a href="/contact">
