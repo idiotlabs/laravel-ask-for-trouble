@@ -17,7 +17,7 @@
                    :h="item.h"
                    :i="item.i"
                    :key="item.i">
-            <div class="grid-image"></div>
+            <div class="grid-image" :style="{ 'background-image': 'url(' + getGridImage(item.i) + ')' }"></div>
         </grid-item>
     </grid-layout>
 </template>
@@ -30,21 +30,36 @@
                 gridColNum: 12,
                 gridRowNum: 30,
                 gridImageMinSize: 2,
-                gridImageMaxSize: 3,
-                gridImageCount: 6,
+                gridImageMaxSize: 5,
+                gridImageCount: 10,
                 layout: [
                 ],
-                image: "/assets/images/bg.jpg",
             }
         },
         mounted() {
-            for (let i = 0; i <= this.gridImageCount; i++) {
+            for (let i = 0; i < this.gridImageCount; i++) {
+                // get image information
+                let imageWidth, imageHeight;
+
+                let img = new Image();
+                img.src = this.getGridImage(i);
+
+                img.onload = () => {
+                    // here you got the width and height
+                    imageWidth = img.width;
+                    imageHeight = img.height;
+                    console.log( imageWidth );
+                };
+
+                let imageRatio = imageHeight / imageWidth;
+                console.log( imageRatio );
+
                 this.layout.push({
                     "x": this.getRandomX(i),
                     "y": this.getRandomY(i),
                     "w": this.getRandomWidth(),
                     "h": this.getRandomHeight(),
-                    "i": i
+                    "i": i,
                 });
             }
         },
@@ -59,8 +74,13 @@
                 return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 1) + this.gridImageMinSize);
             },
             getRandomHeight() {
-                return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 1) + this.gridImageMinSize);
-            }
+                return Math.floor(Math.random() * (this.gridImageMaxSize - this.gridImageMinSize + 4) + this.gridImageMinSize);
+            },
+            getGridImage(i) {
+                return (process.env.ASSET_PATH || '') + "/assets/images/landing/" + (i + 1) + ".jpeg";
+            },
+        },
+        computed: {
         }
     }
 </script>

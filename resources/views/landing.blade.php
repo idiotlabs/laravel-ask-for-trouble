@@ -2,13 +2,11 @@
 
 @section('content')
     <section>
-        <lib-video-background :sources="['{{ asset('assets/video/timelapse.mp4') }}']" img="{{ asset('assets/images/bg.jpg') }}">
+        <lib-video-background :sources="['{{ asset('assets/video/main-trouble.mp4') }}']" img="{{ asset('assets/images/main-trouble.jpeg') }}">
             <h2 class="pt-48 sm:pt-64">누구나 즐기는</h2>
             <h1 class="text-5xl sm:text-6xl">자유로운 음악 생활</h1>
-            <a href="/contact">
-                <button class="mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
-                    사서고생 하러 가기
-                </button>
+            <a href="/contact"class="inline-block mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
+                사서고생 하러 가기
             </a>
         </lib-video-background>
     </section>
