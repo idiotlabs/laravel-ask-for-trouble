@@ -8,6 +8,7 @@ environments:
         memory: 1024
         cli-memory: 512
         domain: musictrouble.club
+        runtime: php-7.4
         build:
             - 'composer install --no-dev --classmap-authoritative'
             - 'php artisan event:cache'
@@ -16,6 +17,7 @@ environments:
         memory: 1024
         cli-memory: 512
         domain: test.musictrouble.club
+        runtime: php-7.4
         build:
             - 'composer install --classmap-authoritative'
             - 'php artisan event:cache'
