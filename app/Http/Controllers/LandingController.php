@@ -9,10 +9,7 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $photos = File::allFiles(public_path('/assets/images/landing'));
-
-        return view('landing')
-            ->with('photos', $photos);
+        return view('landing');
     }
 
     public function contact()

@@ -38,11 +38,11 @@
 
     <section>
         <div class="masonry pt-10 mb-10">
-            @foreach ($photos as $photo)
+            @for ($i = 1; $i < 11; $i++)
             <div class="masonry-item">
-                <img src="{{ asset('/assets/images/landing/') . '/' . $photo->getFilename() }}" alt="사서고생 이미지">
+                <img src="{{ asset('/assets/images/landing/') . '/' . $i . '.jpeg' }}" alt="사서고생 이미지">
             </div>
-            @endforeach
+            @endfor
         </div>
     </section>
 
