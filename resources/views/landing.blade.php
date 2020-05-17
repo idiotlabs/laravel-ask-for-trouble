@@ -5,7 +5,7 @@
         <lib-video-background :sources="['{{ asset('assets/video/main-trouble.mp4') }}']" img="{{ asset('assets/images/main-trouble.jpeg') }}">
             <h2 class="pt-48 sm:pt-64">누구나 즐기는</h2>
             <h1 class="text-5xl sm:text-6xl">자유로운 음악 생활</h1>
-            <a href="/contact"class="inline-block mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
+            <a href="/contact" class="inline-block mt-6 bg-transparent py-4 px-6 border rounded text-lg font-semibold text-white hover:bg-white hover:text-black">
                 사서고생 하러 가기
             </a>
         </lib-video-background>
@@ -32,7 +32,31 @@
         </div>
     </section>
 
+{{--    <section>--}}
+{{--        <landing-grid-component class="pt-10 mb-10"></landing-grid-component>--}}
+{{--    </section>--}}
+
     <section>
-        <landing-grid-component class="pt-10 mb-10"></landing-grid-component>
+        <div class="masonry pt-10 mb-10">
+            @foreach ($photos as $photo)
+            <div class="masonry-item">
+                <img src="{{ asset('/assets/images/landing/') . '/' . $photo->getFilename() }}" alt="사서고생 이미지">
+            </div>
+            @endforeach
+        </div>
     </section>
+
+@endsection
+
+@section('script')
+<script>
+    // window.dataLayer = window.dataLayer || [];
+    // window.dataLayer.push({
+    // 'event': 'onboardMainPage'
+    // });
+
+    // function getGridImage(i) {
+    //     return (process.env.ASSET_PATH || '') + "/assets/images/landing/" + (i + 1) + ".jpeg";
+    // }
+</script>
 @endsection
